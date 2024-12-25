@@ -28,6 +28,10 @@ COPY . /app/
 # Expose ports for Spark
 EXPOSE 8080 7077 6066
 
+# Ensure the /app directory is writable
+RUN mkdir -p /app/logs && chmod -R 777 /app
+
+
 # Switch back to the non-root user
 USER 1001
 
